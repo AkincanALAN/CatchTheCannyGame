@@ -132,18 +132,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Canny1" destination="aLj-cr-h4M" id="0T7-bb-LuV"/>
-                        <outlet property="Canny2" destination="spc-aS-EO6" id="63h-Fj-5Sw"/>
-                        <outlet property="Canny3" destination="cXK-sa-uUO" id="f5f-u3-iJt"/>
-                        <outlet property="Canny4" destination="TD9-Tr-tPn" id="gAd-ni-OFB"/>
-                        <outlet property="Canny5" destination="Sh2-8a-e02" id="dOx-cG-gZb"/>
-                        <outlet property="Canny6" destination="4JE-g3-28S" id="bRZ-0w-fjz"/>
-                        <outlet property="Canny7" destination="or8-vt-xmY" id="EzG-Wh-LHd"/>
-                        <outlet property="Canny8" destination="dhT-D8-k2f" id="IlL-zB-sin"/>
-                        <outlet property="Canny9" destination="KGa-F2-5nI" id="X8c-1t-1Bz"/>
-                        <outlet property="highScoreLabel" destination="NWp-qg-igO" id="BSB-bb-Nfa"/>
-                        <outlet property="scoreLabel" destination="Ffn-1g-Hrc" id="1z3-Eg-7pG"/>
-                        <outlet property="timeLabel" destination="veY-kS-nvI" id="kTy-oz-c51"/>
+                        <outlet property="Canny1" destination="aLj-cr-h4M" id="DgJ-Cr-OAS"/>
+                        <outlet property="Canny2" destination="spc-aS-EO6" id="nyW-Ep-BU3"/>
+                        <outlet property="Canny3" destination="cXK-sa-uUO" id="Xd6-EX-0cU"/>
+                        <outlet property="Canny4" destination="TD9-Tr-tPn" id="PQU-4K-IBm"/>
+                        <outlet property="Canny5" destination="Sh2-8a-e02" id="5Vr-da-J7X"/>
+                        <outlet property="Canny6" destination="4JE-g3-28S" id="O5Q-Pr-gHn"/>
+                        <outlet property="Canny7" destination="or8-vt-xmY" id="g8S-X7-fbT"/>
+                        <outlet property="Canny8" destination="dhT-D8-k2f" id="BEl-Qk-YNo"/>
+                        <outlet property="Canny9" destination="KGa-F2-5nI" id="Smm-io-fb9"/>
+                        <outlet property="highScoreLabel" destination="NWp-qg-igO" id="tHc-ul-xr3"/>
+                        <outlet property="scoreLabel" destination="Ffn-1g-Hrc" id="GTm-nc-vb8"/>
+                        <outlet property="timeLabel" destination="veY-kS-nvI" id="86T-ag-Ens"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,12 +9,31 @@ import UIKit
 
 class ViewController: UIViewController {
    
+    //Variables
+    
     var cannyArray = [UIImageView]()
     var counter = 10
     var launchScore = 0
     var timerDecrease = Timer()
     var timerHide = Timer()
     var highScore = 0
+    
+    //Views
+    
+    @IBOutlet weak var Canny1: UIImageView!
+    @IBOutlet weak var Canny2: UIImageView!
+    @IBOutlet weak var Canny3: UIImageView!
+    @IBOutlet weak var Canny4: UIImageView!
+    @IBOutlet weak var Canny5: UIImageView!
+    @IBOutlet weak var Canny6: UIImageView!
+    @IBOutlet weak var Canny7: UIImageView!
+    @IBOutlet weak var Canny8: UIImageView!
+    @IBOutlet weak var Canny9: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
+    //Functions
     
     @objc func timerDecreaseFunc() {
         counter -= 1
@@ -23,11 +42,16 @@ class ViewController: UIViewController {
             timerDecrease.invalidate()
             timerHide.invalidate()
             
+            //Highscore
+            
             if launchScore > highScore {
                 highScore = launchScore
                 highScoreLabel.text = " Highscore: \(highScore)"
                 UserDefaults.standard.set(highScore, forKey: "highscore")
             }
+            
+            //Alert
+            
             let alert = UIAlertController(title: "Time's Up!", message: "Do you want to play again?", preferredStyle: UIAlertController.Style.alert)
             let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
             let playAgainButton = UIAlertAction(title: "Play Again", style: UIAlertAction.Style.default) { UIAlertAction in
@@ -47,7 +71,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func highingScore() {
+    @objc func scoreIncrease() {
         launchScore += 1
         scoreLabel.text = "Score: \(String(launchScore))"
         }
@@ -60,21 +84,13 @@ class ViewController: UIViewController {
         cannyArray[random].isHidden = false
     }
     
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var highScoreLabel: UILabel!
-    @IBOutlet weak var Canny1: UIImageView!
-    @IBOutlet weak var Canny2: UIImageView!
-    @IBOutlet weak var Canny3: UIImageView!
-    @IBOutlet weak var Canny4: UIImageView!
-    @IBOutlet weak var Canny5: UIImageView!
-    @IBOutlet weak var Canny6: UIImageView!
-    @IBOutlet weak var Canny7: UIImageView!
-    @IBOutlet weak var Canny8: UIImageView!
-    @IBOutlet weak var Canny9: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cannyArray = [Canny1, Canny2, Canny3, Canny4, Canny5, Canny6, Canny7, Canny8, Canny9]
+        
+        // Highscore check
+        
         if let storedScore = UserDefaults.standard.object(forKey: "highscore") as? Int {
             highScore = storedScore
             highScoreLabel.text = "Highscore: \(highScore)"
@@ -83,15 +99,18 @@ class ViewController: UIViewController {
             highScoreLabel.text = "Highscore: \(highScore)"
         }
             
-        cannyArray = [Canny1, Canny2, Canny3, Canny4, Canny5, Canny6, Canny7, Canny8, Canny9]
+        //Images
+        
         for interaction in cannyArray {
             interaction.isUserInteractionEnabled = true
         }
         
         for gestures in cannyArray {
-            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(highingScore))
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(scoreIncrease))
             gestures.addGestureRecognizer(gestureRecognizer)
         }
+        
+        //Timer
         
         timerDecrease = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDecreaseFunc), userInfo: nil, repeats: true)
         timerHide = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(hideCanny) , userInfo: nil, repeats: true)
